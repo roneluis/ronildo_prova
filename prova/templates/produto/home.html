@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block conteudo %}
+<div class="jumbotron">
+  <h1 class="display-4">Primeira Parte</h1>
+  <p class="lead">Produtos</p>
+  <hr class="my-4">
+</div>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card" style="width: 18rem;">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cadastrar Produto</h5>
+        <p class="card-text">Cadastro dos produtos</p>
+        <a href="/prova/produto/create/" class="btn btn-primary">Aqui</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card" style="width: 18rem;">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Editar produto</h5>
+        <p class="card-text">Listagem do produto</p>
+        <a href="/prova/produto/" class="btn btn-primary">Ver</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

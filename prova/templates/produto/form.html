@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block conteudo %}
+<header>
+    <h1>Produto</h1>
+    <form action="/prova/produto/create/" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="nome">nome:</label>
+            {{form.nome}}
+            {{form.nome.errors}}
+        </div>
+        <div>
+            <label for="marca">marca:</label>
+            {{form.marca}}
+            {{form.marca.errors}}
+        </div>
+        <button type="submit"> Ok </button>
+
+    </form>
+</header>
+
+{% endblock %}

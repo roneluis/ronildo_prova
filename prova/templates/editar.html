@@ -1,0 +1,27 @@
+{% extends 'primeira.html' %}
+{% block conteudo %}  
+
+    <h1>Editar Produto</h1>
+    <form action="/prova/editar/{{produto_id}}/" method="post">
+        {% csrf_token %}
+    
+        <div>
+            <label for="nome">Nome:</label>
+            {{form.nome}}
+            {{form.nome.errors}}
+        </div>
+    <div>
+            <label for="marca">Marca</label>
+            {{form.marca}}
+            {{form.marca.errors}}
+        </div>      
+
+
+   
+    <button type="submit">Salvar</button>            
+
+
+
+ </form>
+
+{% endblock %}    

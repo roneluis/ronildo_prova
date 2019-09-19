@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from . models import Produto
+from . forms import ProdutoForm
 
 
 def home (request):
@@ -6,11 +8,12 @@ def home (request):
 
 def produto_list (request):
     produtos = Produto.objects.all()
-    return render(request, 'produto/list.html', {'produtos':produtos})
+    return render(request, 'list.html/', {'produtos':produtos})
 
 def produto_show(request):
     produtos = Produto.objects.all()
-    return render(request, 'produto/show.html', {'produtos':produtos})
+    return render(request, 'show.html/', {'produtos':produtos})
+
 
 def produto_form (request):
     if (request.method == 'POST'):
@@ -19,12 +22,18 @@ def produto_form (request):
           form.save()
           return redirect ('/produto/produto/')
         else:
-            return render(request, 'produto/form.html', {'form':form})  
+            return render(request, 'form.html/', {'form':form})  
     else:
         form = ProdutoForm()
-        return render(request, 'produto/form.html', {'form':form})
+        return render(request, 'form.html/', {'form':form})
 
-def produto_edit (request, produto_id):
+def produto_excluir(request, produto_id):
+          aluno=Aluno.objects.get(pk=aluno_id)
+          aluno.delete()
+          return redirect ('/prova/produto/')
+
+
+def produto_editar (request, produto_id):
      if (request.method == 'POST'):
         produto=Produto.objects.get(pk=produto_id)
         form = ProdutoForm(request.POST, instance = produto)
